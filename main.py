@@ -15,19 +15,11 @@ class Matrix:
         self.cols_speed = np.random.randint(100, 250, size=self.SIZE)
         self.prerendered_chars = self.get_prerendered_chars()
 
-        self.image = self.get_image('try.jpg')
-
     def get_frame(self):
         image = app.cam.get_image()
         image = pg.transform.scale(image, self.app.RES)
         pixel_array = pg.pixelarray.PixelArray(image)
-        return pixel_array 
-
-    def get_image(self, path_to_file):
-        image = pg.image.load(path_to_file)
-        image = pg.transform.scale(image, self.app.RES)
-        pixel_array = pg.pixelarray.PixelArray(image)
-        return pixel_array    
+        return pixel_array  
 
     def get_prerendered_chars(self):
         char_colors = [(0, green ,0) for green in range(256)]
